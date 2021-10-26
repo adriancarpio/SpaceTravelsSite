@@ -6,8 +6,6 @@ import java.util.logging.Logger;
 import com.spacetravels.dao.UsuarioDAO;
 import com.spacetravels.dao.impl.UsuarioDAOImpl;
 import com.spacetravels.model.Usuario;
-
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

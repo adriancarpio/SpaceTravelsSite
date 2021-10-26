@@ -40,7 +40,7 @@ public class LoginServelet extends HttpServlet {
 		String contrasena = req.getParameter("contrasena");
 
 		LOG.info("Usuario: " + usuario);
-		LOG.info("ContraseÃ±a: " + contrasena);
+		LOG.info("Contraseña: " + contrasena);
 		
 	    Usuario usuarioResult = usuarioDao.login(usuario, contrasena);
 	    

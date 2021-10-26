@@ -8,14 +8,14 @@ import java.sql.Statement;
 import java.util.logging.Logger;
 import com.google.gson.Gson;
 import com.spacetravels.dao.UsuarioDAO;
-import com.spacetravels.dao.connection.OracleConnection;
+import com.spacetravels.dao.connection.MariaDBConnection;
 import com.spacetravels.model.Usuario;
 
 public class UsuarioDAOImpl implements UsuarioDAO {
 
 	private static final Logger LOG = Logger.getLogger(UsuarioDAOImpl.class.getName());
 
-	private OracleConnection oracleConnection = new OracleConnection();
+	private MariaDBConnection mariaDBConnection = new MariaDBConnection();
 
 	Gson gson = new Gson();
 
@@ -25,10 +25,10 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 		Usuario usuario = null;
 
 		try {
-			Connection connection = oracleConnection.getConnection();
+			Connection connection = mariaDBConnection.getConnection();
 
-			String sqlSelect = "SELECT  NOMBRE , APELLIDOS FROM USUARIO u WHERE  USUARIO = '" + username
-					+ "' AND PASSWORD ='" + passwrod + "'";
+			String sqlSelect = "SELECT  nombre , apellidos FROM usuarios  WHERE  usuario = '" + username
+					+ "' AND pasword ='" + passwrod + "'";
 
 			Statement stSelect = connection.createStatement();
 			ResultSet rs = stSelect.executeQuery(sqlSelect);
@@ -55,7 +55,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 
 		try {
 
-			Connection connection = oracleConnection.getConnection();
+			Connection connection = mariaDBConnection.getConnection();
 
 			PreparedStatement statement = connection.prepareStatement(INSERT_USUARIO);
 
