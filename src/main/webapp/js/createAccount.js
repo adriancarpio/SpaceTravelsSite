@@ -25,7 +25,7 @@ function registrarNuevoUsuario(){
 	console.log("Nombre: " + nombre);
 	console.log("Apellidos: " + apellidos);
 	console.log("Usuario: " + user);
-	console.log("Conytraseña: " + pass);
+	console.log("Contraseña: " + pass);
 	console.log("Correo: " + email);
 	console.log("Pais: "  + telefono);
 	

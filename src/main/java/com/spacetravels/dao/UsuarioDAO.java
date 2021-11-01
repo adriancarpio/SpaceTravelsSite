@@ -4,7 +4,7 @@ import com.spacetravels.model.Usuario;
 
 public interface UsuarioDAO {
 
-	String INSERT_USUARIO = "INSERT INTO space_travels.usuarios (nombre, apellidos, email, usuario, pasword, telefono)\n"
+	String INSERT_USUARIO = "INSERT INTO space_travels.usuarios (nombre, apellidos, usuario, pasword, email, telefono)\n"
 			+ "VALUES( ?, ?, ?, ?, ?, ?)";
 
 	public Usuario login(String username, String passwrod);
