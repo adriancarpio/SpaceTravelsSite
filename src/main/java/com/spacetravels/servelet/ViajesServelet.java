@@ -24,18 +24,18 @@ public class ViajesServelet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		System.out.println("Entro al servelt");
+		//System.out.println("Entro al servelt");
 		Gson gson = new Gson();
 		ViajesWS wsClient = new ViajesWSImplService().getViajesWSImplPort();
-
+		
+		List<Viajes> lstViajes = wsClient.obtenerTodosViajes();
+		
 		List<String> viajeJson = new ArrayList<String>();
 
-		List<Viajes> lstViajes = wsClient.obtenerTodosViajes();
 
 		for (Viajes viajes : lstViajes) {
 
 			viajeJson.add(gson.toJson(viajes));
-
 		}
 
 		String listaGson = gson.toJson(viajeJson);
